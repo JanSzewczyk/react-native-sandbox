@@ -1,0 +1,21 @@
+# generated native folders
+/ios
+/android
+
+# dependencies
+/node_modules
+
+# WebStorm
+/.idea
+
+# VS Code
+/.vscode
+
+# Docs
+/CHANGELOG.md
+/README.md
+
+/.cursor
+
+# local env files
+.env*.local

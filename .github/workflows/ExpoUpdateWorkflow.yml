@@ -1,0 +1,283 @@
+name: Check Expo Updates
+
+on:
+  schedule:
+    # Run every Monday at 9:00 AM UTC
+    - cron: "0 9 * * 1"
+  workflow_dispatch: # Allow manual triggering
+  push:
+    branches: [main]
+    paths:
+      - "package.json"
+      - "app.config.ts"
+      - "expo.json"
+
+jobs:
+  check-expo-updates:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Expo CLI
+        run: npm install -g @expo/cli@latest
+
+      - name: Get current Expo SDK version
+        id: current-version
+        run: |
+          CURRENT_VERSION=$(node -e "
+            const pkg = require('./package.json');
+            const expoVersion = pkg.dependencies?.expo || 'not found';
+            console.log(expoVersion.replace(/[~^]/, ''));
+          ")
+          echo "current=$CURRENT_VERSION" >> $GITHUB_OUTPUT
+          echo "Current Expo SDK version: $CURRENT_VERSION"
+
+      - name: Check for Expo CLI updates
+        id: expo-cli-check
+        run: |
+          echo "Checking Expo CLI version..."
+          CURRENT_CLI=$(npx expo --version)
+          echo "current_cli=$CURRENT_CLI" >> $GITHUB_OUTPUT
+          echo "Current Expo CLI version: $CURRENT_CLI"
+
+      - name: Check for available SDK updates
+        id: sdk-check
+        run: |
+          echo "Checking for available Expo SDK updates..."
+
+          # Get latest SDK version
+          LATEST_SDK=$(npm view expo version)
+          echo "latest_sdk=$LATEST_SDK" >> $GITHUB_OUTPUT
+          echo "Latest Expo SDK version: $LATEST_SDK"
+
+          # Compare versions
+          CURRENT="${{ steps.current-version.outputs.current }}"
+          if [ "$CURRENT" != "$LATEST_SDK" ]; then
+            echo "update_available=true" >> $GITHUB_OUTPUT
+            echo "SDK update available: $CURRENT -> $LATEST_SDK"
+          else
+            echo "update_available=false" >> $GITHUB_OUTPUT
+            echo "SDK is up to date"
+          fi
+
+      - name: Check project compatibility
+        if: steps.sdk-check.outputs.update_available == 'true'
+        id: compatibility-check
+        run: |
+          echo "Checking project compatibility with latest SDK..."
+
+          # Create a temporary package.json to test compatibility
+          cp package.json package.json.backup
+
+          # Try to install latest Expo version to check compatibility
+          npm install expo@latest --dry-run > compatibility_check.log 2>&1 || true
+
+          # Check for peer dependency issues
+          if grep -q "peer dep missing\|ERESOLVE" compatibility_check.log; then
+            echo "compatibility_issues=true" >> $GITHUB_OUTPUT
+            echo "⚠️ Potential compatibility issues found"
+            cat compatibility_check.log
+          else
+            echo "compatibility_issues=false" >> $GITHUB_OUTPUT
+            echo "✅ No obvious compatibility issues"
+          fi
+
+          # Restore original package.json
+          mv package.json.backup package.json
+
+      - name: Check for dependency updates
+        id: deps-check
+        run: |
+          echo "Checking for Expo-related dependency updates..."
+
+          # List current Expo dependencies
+          echo "Current Expo dependencies:"
+          npm ls | grep -E "(expo|@expo)" || true
+
+          # Check for outdated Expo packages
+          OUTDATED=$(npm outdated | grep -E "(expo|@expo)" || true)
+          if [ -n "$OUTDATED" ]; then
+            echo "expo_deps_outdated=true" >> $GITHUB_OUTPUT
+            echo "Outdated Expo dependencies found:"
+            echo "$OUTDATED"
+          else
+            echo "expo_deps_outdated=false" >> $GITHUB_OUTPUT
+            echo "All Expo dependencies are up to date"
+          fi
+
+      - name: Generate update report
+        id: generate-report
+        run: |
+          echo "Generating update report..."
+
+          REPORT_FILE="expo-update-report.md"
+
+          cat > $REPORT_FILE << EOF
+          # Expo Update Report
+
+          **Generated on:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')
+          **Repository:** ${{ github.repository }}
+          **Branch:** ${{ github.ref_name }}
+
+          ## Current Status
+
+          - **Current Expo SDK:** ${{ steps.current-version.outputs.current }}
+          - **Latest Expo SDK:** ${{ steps.sdk-check.outputs.latest_sdk }}
+          - **Expo CLI Version:** ${{ steps.expo-cli-check.outputs.current_cli }}
+          - **Update Available:** ${{ steps.sdk-check.outputs.update_available }}
+
+          EOF
+
+          if [ "${{ steps.sdk-check.outputs.update_available }}" == "true" ]; then
+            cat >> $REPORT_FILE << EOF
+          ## 🚀 SDK Update Available
+
+          A new Expo SDK version is available: **${{ steps.sdk-check.outputs.latest_sdk }}**
+
+          ### Migration Steps:
+          1. Review the [Expo SDK changelog](https://docs.expo.dev/versions/latest/)
+          2. Update your \`package.json\`:
+             \`\`\`bash
+             npx expo install --fix
+             \`\`\`
+          3. Test your application thoroughly
+          4. Update any incompatible dependencies
+
+          EOF
+          fi
+
+          if [ "${{ steps.compatibility-check.outputs.compatibility_issues }}" == "true" ]; then
+            cat >> $REPORT_FILE << EOF
+          ## ⚠️ Compatibility Issues Detected
+
+          Some dependencies may not be compatible with the latest SDK version.
+          Please review the compatibility check output above.
+
+          EOF
+          fi
+
+          if [ "${{ steps.deps-check.outputs.expo_deps_outdated }}" == "true" ]; then
+            cat >> $REPORT_FILE << EOF
+          ## 📦 Outdated Dependencies
+
+          Some Expo-related dependencies are outdated. Run \`npm outdated\` for details.
+
+          EOF
+          fi
+
+          cat >> $REPORT_FILE << EOF
+          ## Useful Commands
+
+          - Check current SDK version: \`npx expo --version\`
+          - Install SDK updates: \`npx expo install --fix\`
+          - Check for outdated packages: \`npm outdated\`
+          - Upgrade Expo CLI: \`npm install -g @expo/cli@latest\`
+
+          ---
+
+          *This report was generated automatically by GitHub Actions.*
+          EOF
+
+          echo "Report generated successfully"
+          cat $REPORT_FILE
+
+      - name: Upload report as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: expo-update-report-${{ github.run_number }}
+          path: expo-update-report.md
+          retention-days: 30
+
+      - name: Create Issue for SDK Update
+        if: steps.sdk-check.outputs.update_available == 'true'
+        uses: actions/github-script@v8
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const report = fs.readFileSync('expo-update-report.md', 'utf8');
+
+            // Check if issue already exists
+            const { data: issues } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: ['expo-update'],
+              state: 'open'
+            });
+
+            const existingIssue = issues.find(issue => 
+              issue.title.includes('Expo SDK ${{ steps.sdk-check.outputs.latest_sdk }}')
+            );
+
+            if (!existingIssue) {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: '🚀 Expo SDK ${{ steps.sdk-check.outputs.latest_sdk }} Available',
+                body: report,
+                labels: ['expo-update', 'enhancement']
+              });
+              console.log('Created new issue for Expo SDK update');
+            } else {
+              console.log('Issue already exists for this SDK version');
+            }
+
+      - name: Comment on PR if triggered by push
+        if: github.event_name == 'push' && steps.sdk-check.outputs.update_available == 'true'
+        uses: actions/github-script@v8
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const report = fs.readFileSync('expo-update-report.md', 'utf8');
+
+            // Find PR for this push
+            const { data: prs } = await github.rest.pulls.list({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              head: `${context.repo.owner}:${context.ref.replace('refs/heads/', '')}`,
+              state: 'open'
+            });
+
+            if (prs.length > 0) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: prs[0].number,
+                body: `## 🚀 Expo Update Available\n\n${report}`
+              });
+              console.log('Added comment to PR');
+            }
+      - name: Summary
+        run: |
+          echo "## 📊 Expo Update Check Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Item | Current | Latest | Status |" >> $GITHUB_STEP_SUMMARY
+          echo "|------|---------|--------|--------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Expo SDK | ${{ steps.current-version.outputs.current }} | ${{ steps.sdk-check.outputs.latest_sdk }} | ${{ steps.sdk-check.outputs.update_available == 'true' && '🚀 Update Available' || '✅ Up to date' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Expo CLI | ${{ steps.expo-cli-check.outputs.current_cli }} | Latest | ✅ Installed |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          if [ "${{ steps.sdk-check.outputs.update_available }}" == "true" ]; then
+            echo "### 🚀 Action Required" >> $GITHUB_STEP_SUMMARY
+            echo "A new Expo SDK version is available. Consider updating your project." >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "**Quick update command:**" >> $GITHUB_STEP_SUMMARY
+            echo '```bash' >> $GITHUB_STEP_SUMMARY
+            echo 'npx expo install --fix' >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
+          else
+            echo "### ✅ All Good" >> $GITHUB_STEP_SUMMARY
+            echo "Your project is using the latest Expo SDK version." >> $GITHUB_STEP_SUMMARY
+          fi
