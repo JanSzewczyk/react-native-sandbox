@@ -1,26 +1,4 @@
-// import { StyleSheet, Text, View } from "react-native";
-//
-// export default function TabOneScreen() {
-//   return (
-//     <View style={styles.container}>
-//       <Text style={styles.title}>Tab One</Text>
-//     </View>
-//   );
-// }
-//
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     alignItems: "center",
-//     justifyContent: "center"
-//   },
-//   title: {
-//     fontSize: 20,
-//     fontWeight: "bold"
-//   }
-// });
-
-import { View, Text, ScrollView, StyleSheet, RefreshControl } from "react-native";
+import { View, Text, ScrollView, RefreshControl } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { useState } from "react";
 import { Ionicons } from "@expo/vector-icons";
@@ -36,138 +14,53 @@ export default function CurrentScreen() {
 
   return (
     <ScrollView
-      style={styles.container}
-      contentContainerStyle={styles.contentContainer}
+      className="flex-1 bg-gray-50"
+      contentContainerClassName="p-4"
       refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}
     >
-      <LinearGradient colors={["#4facfe", "#00f2fe"]} style={styles.weatherCard}>
-        <View style={styles.locationContainer}>
+      <LinearGradient colors={["#4facfe", "#00f2fe"]} style={{ borderRadius: 20, padding: 24, marginBottom: 16 }}>
+        <View className="mb-5 flex-row items-center">
           <Ionicons name="location" size={20} color="#fff" />
-          <Text style={styles.location}>San Francisco, CA</Text>
+          <Text className="ml-2 text-xl font-semibold text-white">San Francisco, CA</Text>
         </View>
 
-        <View style={styles.mainWeather}>
-          <Text style={styles.temperature}>72°</Text>
-          <Text style={styles.condition}>Partly Cloudy</Text>
+        <View className="mb-8 items-center">
+          <Text className="text-7xl font-light text-white">72°</Text>
+          <Text className="mt-2 text-2xl text-white">Partly Cloudy</Text>
         </View>
 
-        <View style={styles.details}>
-          <View style={styles.detailItem}>
-            <Text style={styles.detailLabel}>Feels Like</Text>
-            <Text style={styles.detailValue}>75°</Text>
+        <View className="flex-row justify-around">
+          <View className="items-center">
+            <Text className="mb-1 text-sm text-gray-50">Feels Like</Text>
+            <Text className="text-lg font-semibold text-white">75°</Text>
           </View>
-          <View style={styles.detailItem}>
-            <Text style={styles.detailLabel}>Humidity</Text>
-            <Text style={styles.detailValue}>65%</Text>
+          <View className="items-center">
+            <Text className="mb-1 text-sm text-gray-50">Humidity</Text>
+            <Text className="text-lg font-semibold text-white">65%</Text>
           </View>
-          <View style={styles.detailItem}>
-            <Text style={styles.detailLabel}>Wind</Text>
-            <Text style={styles.detailValue}>12 mph</Text>
+          <View className="items-center">
+            <Text className="mb-1 text-sm text-gray-50">Wind</Text>
+            <Text className="text-lg font-semibold text-white">12 mph</Text>
           </View>
         </View>
       </LinearGradient>
 
       {/* Additional Weather Info Cards */}
-      <View style={styles.infoCard}>
-        <Text style={styles.cardTitle}>Weather Details</Text>
-        <View style={styles.infoRow}>
-          <Text style={styles.infoLabel}>Pressure</Text>
-          <Text style={styles.infoValue}>30.15 in</Text>
+      <View className="mb-4 rounded-2xl border border-gray-100 bg-white p-5">
+        <Text className="mb-4 text-lg font-semibold text-gray-900">Weather Details</Text>
+        <View className="flex-row justify-between border-b border-gray-100 py-3">
+          <Text className="text-sm text-gray-600">Pressure</Text>
+          <Text className="text-sm font-semibold text-gray-900">30.15 in</Text>
         </View>
-        <View style={styles.infoRow}>
-          <Text style={styles.infoLabel}>Visibility</Text>
-          <Text style={styles.infoValue}>10 mi</Text>
+        <View className="flex-row justify-between border-b border-gray-100 py-3">
+          <Text className="text-sm text-gray-600">Visibility</Text>
+          <Text className="text-sm font-semibold text-gray-900">10 mi</Text>
         </View>
-        <View style={styles.infoRow}>
-          <Text style={styles.infoLabel}>UV Index</Text>
-          <Text style={styles.infoValue}>5 (Moderate)</Text>
+        <View className="flex-row justify-between border-b border-gray-100 py-3">
+          <Text className="text-sm text-gray-600">UV Index</Text>
+          <Text className="text-sm font-semibold text-gray-900">5 (Moderate)</Text>
         </View>
       </View>
     </ScrollView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#f5f5f5"
-  },
-  contentContainer: {
-    padding: 16
-  },
-  weatherCard: {
-    borderRadius: 20,
-    padding: 24,
-    marginBottom: 16
-  },
-  locationContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    marginBottom: 20
-  },
-  location: {
-    color: "#fff",
-    fontSize: 18,
-    marginLeft: 8,
-    fontWeight: "500"
-  },
-  mainWeather: {
-    alignItems: "center",
-    marginBottom: 30
-  },
-  temperature: {
-    fontSize: 72,
-    fontWeight: "200",
-    color: "#fff"
-  },
-  condition: {
-    fontSize: 24,
-    color: "#fff",
-    marginTop: 8
-  },
-  details: {
-    flexDirection: "row",
-    justifyContent: "space-around"
-  },
-  detailItem: {
-    alignItems: "center"
-  },
-  detailLabel: {
-    color: "rgba(255,255,255,0.8)",
-    fontSize: 12,
-    marginBottom: 4
-  },
-  detailValue: {
-    color: "#fff",
-    fontSize: 18,
-    fontWeight: "600"
-  },
-  infoCard: {
-    backgroundColor: "#fff",
-    borderRadius: 16,
-    padding: 20,
-    marginBottom: 16
-  },
-  cardTitle: {
-    fontSize: 18,
-    fontWeight: "600",
-    marginBottom: 16,
-    color: "#333"
-  },
-  infoRow: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    paddingVertical: 12,
-    borderBottomWidth: 1,
-    borderBottomColor: "#f0f0f0"
-  },
-  infoLabel: {
-    color: "#666",
-    fontSize: 14
-  },
-  infoValue: {
-    color: "#333",
-    fontSize: 14,
-    fontWeight: "600"
-  }
-});

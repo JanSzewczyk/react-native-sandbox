@@ -1,4 +1,4 @@
-import { FlatList, View, Text, StyleSheet, FlatListProps } from "react-native";
+import { FlatList, View, Text } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
 type HourlyItem = {
@@ -24,12 +24,12 @@ export default function HourlyScreen() {
         data={hourlyData}
         renderItem={({ item }) => (
           <View className="w-28 items-center rounded-lg bg-white p-4">
-            <Text style={styles.time}>{item.time}</Text>
-            <Ionicons name={item.icon} size={32} color="#666" />
-            <Text style={styles.temp}>{item.temp}°</Text>
-            <View style={styles.precipContainer}>
-              <Ionicons name="water-outline" size={14} color="#4facfe" />
-              <Text style={styles.precip}>{item.precipitation}%</Text>
+            <Text className="mb-3 text-sm text-gray-600">{item.time}</Text>
+            <Ionicons name={item.icon} size={32} color="#9ca3af" />
+            <Text className="mt-2 text-xl font-semibold text-gray-900">{item.temp}°</Text>
+            <View className="mt-2 flex-row items-center">
+              <Ionicons name="water-outline" size={14} color="#60a5fa" />
+              <Text className="ml-1 text-sm text-blue-400">{item.precipitation}%</Text>
             </View>
           </View>
         )}
@@ -42,35 +42,3 @@ export default function HourlyScreen() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  hourItem: {
-    backgroundColor: "#fff",
-    borderRadius: 16,
-    padding: 16,
-    marginRight: 12,
-    alignItems: "center",
-    minWidth: 80
-  },
-  time: {
-    fontSize: 12,
-    color: "#666",
-    marginBottom: 12
-  },
-  temp: {
-    fontSize: 20,
-    fontWeight: "600",
-    color: "#333",
-    marginTop: 8
-  },
-  precipContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    marginTop: 8
-  },
-  precip: {
-    fontSize: 12,
-    color: "#4facfe",
-    marginLeft: 4
-  }
-});
