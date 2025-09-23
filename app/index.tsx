@@ -10,44 +10,10 @@ import { BlurView } from "expo-blur";
 
 const features = [
   {
-    icon: "phone-portrait-outline",
-    title: "Cross-Platform",
-    description: "Built with React Native & Expo for iOS and Android"
-  },
-  {
     icon: "code-slash-outline",
-    title: "TypeScript",
-    description: "Fully typed with TypeScript for better development experience"
-  },
-  {
-    icon: "compass-outline",
-    title: "Expo Router",
-    description: "File-based routing with Expo Router v6"
-  },
-  {
-    icon: "color-palette-outline",
-    title: "NativeWind",
-    description: "Tailwind CSS styling for React Native"
-  },
-  {
-    icon: "flash-outline",
-    title: "Reanimated",
-    description: "Smooth animations with React Native Reanimated"
-  },
-  {
-    icon: "shield-checkmark-outline",
-    title: "Type Safety",
-    description: "Zod validation for runtime type safety"
-  },
-  {
-    icon: "construct-outline",
-    title: "Dev Tools",
-    description: "ESLint, Prettier, and comprehensive testing setup"
-  },
-  {
-    icon: "rocket-outline",
-    title: "Performance",
-    description: "Optimized Metro bundler and Expo SDK 54"
+    title: "Cross-Platform",
+    description: "Built with React Native & Expo for iOS and Android",
+    href: "/animated-header"
   }
 ] as const;
 
@@ -99,7 +65,7 @@ export default function Index() {
                 entering={FadeInUp.delay(700).duration(600)}
                 className="mb-4 text-center text-4xl font-bold text-blue-500"
               >
-                Szumplate
+                Sandxbox
               </Animated.Text>
 
               <Animated.Text
@@ -110,13 +76,14 @@ export default function Index() {
               </Animated.Text>
             </View>
           </Animated.View>
+
           {/* Features Section */}
           <View className="mt-8 px-6">
             <Animated.Text
               entering={FadeInDown.delay(1000).duration(600)}
               className="mb-2 text-2xl font-bold text-gray-900"
             >
-              ✨ Features & Benefits
+              ✨ Features
             </Animated.Text>
             <Animated.Text entering={FadeInDown.delay(1100).duration(600)} className="mb-6 leading-6 text-gray-600">
               Everything you need to build professional mobile applications
@@ -128,6 +95,7 @@ export default function Index() {
                 icon={feature.icon}
                 title={feature.title}
                 description={feature.description}
+                href={feature.href}
                 index={index}
               />
             ))}
