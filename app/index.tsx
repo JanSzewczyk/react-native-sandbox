@@ -11,9 +11,15 @@ import { BlurView } from "expo-blur";
 const features = [
   {
     icon: "code-slash-outline",
-    title: "Cross-Platform",
+    title: "Animated Header",
     description: "Built with React Native & Expo for iOS and Android",
     href: "/animated-header"
+  },
+  {
+    icon: "code-slash-outline",
+    title: "Top Tabs",
+    description: "Built with React Native & Expo for iOS and Android",
+    href: "/top-navs"
   }
 ] as const;
 
