@@ -20,6 +20,12 @@ const features = [
     title: "Top Tabs",
     description: "Built with React Native & Expo for iOS and Android",
     href: "/top-navs"
+  },
+  {
+    icon: "code-slash-outline",
+    title: "Bottom Sheet",
+    description: "Built with React Native & Expo for iOS and Android",
+    href: "/bottom-sheet"
   }
 ] as const;
 
