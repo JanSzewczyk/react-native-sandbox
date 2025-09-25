@@ -13,7 +13,7 @@ import { Text, View } from "react-native";
 const HEADER_HEIGHT = 80;
 
 export default function AnimatedHeaderView() {
-  const { top: statusBarHeight, bottom } = useSafeAreaInsets();
+  const { top: statusBarHeight } = useSafeAreaInsets();
 
   const scrollY = useSharedValue(0);
   const lastScrollY = useSharedValue(0);
