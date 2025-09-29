@@ -26,6 +26,12 @@ const features = [
     title: "Bottom Sheet",
     description: "Built with React Native & Expo for iOS and Android",
     href: "/bottom-sheet"
+  },
+  {
+    icon: "code-slash-outline",
+    title: "Twitter scroll experience",
+    description: "Built with React Native & Expo for iOS and Android",
+    href: "/twitter-scroll"
   }
 ] as const;
 
@@ -77,7 +83,7 @@ export default function Index() {
                 entering={FadeInUp.delay(700).duration(600)}
                 className="mb-4 text-center text-4xl font-bold text-blue-500"
               >
-                Sandxbox
+                Sandbox
               </Animated.Text>
 
               <Animated.Text
