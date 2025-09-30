@@ -1,6 +1,6 @@
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 import { withLayoutContext } from "expo-router";
-import { View, StyleSheet, Text } from "react-native";
+import { StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 const { Navigator } = createMaterialTopTabNavigator();
@@ -9,7 +9,7 @@ export const MaterialTopTabs = withLayoutContext(Navigator);
 
 export default function TopNavsLayout() {
   return (
-    <SafeAreaView edges={["top"]} className="flex-1 bg-white">
+    <SafeAreaView edges={["top", "bottom"]} className="flex-1 bg-white">
       <MaterialTopTabs
         initialRouteName="index"
         screenOptions={{
@@ -18,11 +18,14 @@ export default function TopNavsLayout() {
           tabBarInactiveTintColor: "#666",
           tabBarLabelStyle: styles.tabLabel,
           tabBarStyle: styles.tabBar,
+          tabBarItemStyle: { width: "auto" },
           tabBarIndicatorStyle: styles.tabIndicator,
           tabBarPressColor: "#e0e0e0",
-          tabBarScrollEnabled: false, // Set to true if you have many tabs
-          swipeEnabled: true
+          tabBarScrollEnabled: true,
+          swipeEnabled: true,
+          tabBarBounces: true
         }}
+        tabBarPosition="top"
       >
         <MaterialTopTabs.Screen
           name="index"
@@ -34,6 +37,18 @@ export default function TopNavsLayout() {
           name="two"
           options={{
             title: "Hourly"
+          }}
+        />
+        <MaterialTopTabs.Screen
+          name="three"
+          options={{
+            title: "Third Tab"
+          }}
+        />
+        <MaterialTopTabs.Screen
+          name="four"
+          options={{
+            title: "Fourth Tab - really long title"
           }}
         />
       </MaterialTopTabs>
@@ -51,7 +66,7 @@ const styles = StyleSheet.create({
   },
   tabIndicator: {
     backgroundColor: "#007AFF",
-    height: 3
+    height: 2
   },
   tabLabel: {
     fontSize: 14,
