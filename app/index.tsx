@@ -32,6 +32,12 @@ const features = [
     title: "Twitter scroll experience",
     description: "Built with React Native & Expo for iOS and Android",
     href: "/twitter-scroll"
+  },
+  {
+    icon: "code-slash-outline",
+    title: "Linkedin Tabs",
+    description: "Built with React Native & Expo for iOS and Android",
+    href: "/linkedin-tabs"
   }
 ] as const;
 
