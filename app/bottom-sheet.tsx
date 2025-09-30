@@ -1,5 +1,5 @@
-import React, { useRef } from "react";
-import { View, Text, Button, StyleSheet, TouchableWithoutFeedback } from "react-native";
+import React from "react";
+import { View, Text, StyleSheet, TouchableWithoutFeedback } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import BottomSheet, { BottomSheetRef } from "~/components/bottom-sheet";
 
