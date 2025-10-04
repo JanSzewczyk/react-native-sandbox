@@ -1,13 +1,13 @@
 <div align="center">
 
-# 📱 React Native Szumplate
+# 📱 React Native Sandbox
 
-### Modern, production-ready React Native starter template
+### Experimental playground for React Native animations and UI patterns
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Expo SDK](https://img.shields.io/github/package-json/dependency-version/JanSzewczyk/react-native-szumplate/expo??style=flat&logo=expo&label=Expo&color=000020)](https://expo.dev/)
-[![React Native](https://img.shields.io/github/package-json/dependency-version/JanSzewczyk/react-native-szumplate/react-native?style=flat&logo=react&label=React+Native&color=61dafb)](https://reactnative.dev/)
-[![TypeScript](https://img.shields.io/github/package-json/dependency-version/JanSzewczyk/react-native-szumplate/dev/typescript?style=flat&logo=typescript&label=TypeScript&color=3178c6)](https://www.typescriptlang.org/)
+[![Expo SDK](https://img.shields.io/github/package-json/dependency-version/JanSzewczyk/react-native-sandbox/expo??style=flat&logo=expo&label=Expo&color=000020)](https://expo.dev/)
+[![React Native](https://img.shields.io/github/package-json/dependency-version/JanSzewczyk/react-native-sandbox/react-native?style=flat&logo=react&label=React+Native&color=61dafb)](https://reactnative.dev/)
+[![TypeScript](https://img.shields.io/github/package-json/dependency-version/JanSzewczyk/react-native-sandbox/dev/typescript?style=flat&logo=typescript&label=TypeScript&color=3178c6)](https://www.typescriptlang.org/)
 
 [Getting Started](#-getting-started) • [Features](#-features) • [Documentation](#-documentation) • [Contributing](#-contributing)
 
@@ -17,18 +17,25 @@
 
 ## 👋 Hello there!
 
-**React Native Szumplate** is a modern, production-ready starter template crafted by [Szum-Tech](https://github.com/JanSzewczyk) to help you build and ship high-quality iOS, Android, and web applications faster. It combines the best practices and most powerful tools in the React Native ecosystem—all configured and ready to use.
+**React Native Sandbox** is an experimental playground for exploring advanced animations, gestures, and UI patterns in React Native. This project showcases various implementations of popular mobile app interactions, including Twitter-style scrolling headers, LinkedIn-inspired tab layouts, bottom sheets, and animated navigation patterns.
 
-### Why Szumplate?
+### What's Inside?
 
-- **🚀 Production-Ready**: Pre-configured with industry best practices
-- **⚡ Fast Development**: Hot reload, file-based routing, and excellent DX
-- **🎨 Beautiful UI**: NativeWind (Tailwind CSS) for rapid styling
+- **🎬 Animation Demos**: Reanimated-powered examples of smooth, native-feeling animations
+- **📱 UI Patterns**: Real-world inspired implementations (Twitter scroll, LinkedIn tabs)
+- **🧪 Experimentation Space**: A sandbox for testing new ideas and techniques
 - **🔒 Type-Safe**: Full TypeScript + Zod runtime validation
-- **📱 True Cross-Platform**: Single codebase for iOS, Android, and Web
-- **🛠️ Developer Experience**: ESLint, Prettier, and modern tooling
+- **⚡ Best Practices**: Modern React Native architecture with Expo Router
+- **🛠️ Developer Experience**: ESLint, Prettier, and optimized tooling
 
 ## ✨ Features
+
+### 🎬 Demo Screens
+- **Twitter Scroll** - Animated header that expands/collapses on scroll
+- **LinkedIn Tabs** - Custom tab layout with animated icons and smooth transitions
+- **Bottom Sheet** - Interactive draggable bottom sheet component
+- **Animated Header** - Various header animation patterns
+- **Top Navigation** - Hourly data tabs with dynamic content rendering
 
 ### 🎯 Core Technologies
 - **React Native 0.81** with **React 19** - Latest stable versions
@@ -126,8 +133,8 @@ Before you begin, ensure you have the following installed:
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/JanSzewczyk/react-native-szumplate.git
-cd react-native-szumplate
+git clone https://github.com/JanSzewczyk/react-native-sandbox.git
+cd react-native-sandbox
 ```
 
 ### 2️⃣ Install Dependencies
@@ -199,23 +206,24 @@ Or press `w` in the terminal after starting the dev server.
 ## 📁 Project Structure
 
 ```
-react-native-szumplate/
-├── src/
-│   ├── app/                    # Expo Router file-based routes
-│   │   ├── _layout.tsx         # Root layout with navigation
-│   │   ├── index.tsx           # Home screen
-│   │   └── global.css          # Global Tailwind styles
-│   ├── components/             # Reusable UI components
-│   ├── hooks/                  # Custom React hooks (ready for use)
-│   ├── utils/                  # Utility functions (ready for use)
-│   ├── data/                   # Data models and schemas
-│   │   └── env.ts              # Environment variables validation
-│   ├── server/                 # API/Server logic (ready for use)
-│   └── tests/                  # Test files (ready for use)
-
+react-native-sandbox/
+├── app/                        # Expo Router file-based routes
+│   ├── linkedin-tabs/          # LinkedIn-style tab navigation demo
+│   ├── top-navs/               # Top navigation with hourly tabs
+│   │   ├── _layout.tsx         # Tab navigation layout
+│   │   ├── index.tsx           # First tab (hourly data)
+│   │   ├── two.tsx             # Second tab
+│   │   ├── three.tsx           # Third tab
+│   │   └── four.tsx            # Fourth tab
+│   ├── _layout.tsx             # Root layout with navigation
+│   ├── index.tsx               # Home screen with demo links
+│   ├── twitter-scroll.tsx      # Twitter-style scrolling header
+│   ├── bottom-sheet.tsx        # Bottom sheet interaction demo
+│   ├── animated-header.tsx     # Animated header patterns
+│   └── global.css              # Global Tailwind styles
+├── components/                 # Reusable UI components
+├── data/                       # Data models and mock data
 ├── assets/                     # Static assets (images, fonts)
-├── scripts/                    # Build and utility scripts
-├── .env.local                  # Local environment variables (gitignored)
 ├── .env.example                # Environment variables template
 ├── app.config.ts               # Expo app configuration
 ├── babel.config.js             # Babel configuration
@@ -229,11 +237,11 @@ react-native-szumplate/
 
 ### Key Directories
 
-- **`src/app/`** - File-based routing with Expo Router. Each file becomes a route.
-- **`src/components/`** - Reusable React Native components.
-- **`src/hooks/`** - Custom React hooks for shared logic.
-- **`src/utils/`** - Helper functions and utilities.
-- **`src/data/`** - Data models, schemas, and environment validation.
+- **`app/`** - File-based routing with Expo Router. Each file becomes a demo screen.
+- **`app/linkedin-tabs/`** - LinkedIn-inspired custom tab layout implementation.
+- **`app/top-navs/`** - Top navigation tabs with dynamic hourly content.
+- **`components/`** - Reusable React Native components.
+- **`data/`** - Mock data and schemas for demos.
 - **`assets/`** - Images, fonts, and other static resources.
 
 ### Important Configuration Files
@@ -778,38 +786,38 @@ This checks for:
 
 1. Check [Expo Documentation](https://docs.expo.dev/)
 2. Search [Expo Forums](https://forums.expo.dev/)
-3. Open an issue on [GitHub](https://github.com/JanSzewczyk/react-native-szumplate/issues)
+3. Open an issue on [GitHub](https://github.com/JanSzewczyk/react-native-sandbox/issues)
 
 ---
 
 ## 🛠️ Tech Stack
 
 ### Core Framework
-- **[React](https://react.dev/)** ![](https://img.shields.io/github/package-json/dependency-version/JanSzewczyk/react-native-szumplate/react?style=flat-square&label=) - UI library
-- **[React Native](https://reactnative.dev/)** ![](https://img.shields.io/github/package-json/dependency-version/JanSzewczyk/react-native-szumplate/react-native?style=flat-square&label=) - Mobile framework
-- **[Expo](https://expo.dev/)** ![](https://img.shields.io/github/package-json/dependency-version/JanSzewczyk/react-native-szumplate/expo?style=flat-square&label=) - Development platform
-- **[TypeScript](https://www.typescriptlang.org/)** ![](https://img.shields.io/github/package-json/dependency-version/JanSzewczyk/react-native-szumplate/dev/typescript?style=flat-square&label=) - Type safety
+- **[React](https://react.dev/)** ![](https://img.shields.io/github/package-json/dependency-version/JanSzewczyk/react-native-sandbox/react?style=flat-square&label=) - UI library
+- **[React Native](https://reactnative.dev/)** ![](https://img.shields.io/github/package-json/dependency-version/JanSzewczyk/react-native-sandbox/react-native?style=flat-square&label=) - Mobile framework
+- **[Expo](https://expo.dev/)** ![](https://img.shields.io/github/package-json/dependency-version/JanSzewczyk/react-native-sandbox/expo?style=flat-square&label=) - Development platform
+- **[TypeScript](https://www.typescriptlang.org/)** ![](https://img.shields.io/github/package-json/dependency-version/JanSzewczyk/react-native-sandbox/dev/typescript?style=flat-square&label=) - Type safety
 
 ### Navigation & Routing
-- **[Expo Router](https://docs.expo.dev/router/introduction/)** ![](https://img.shields.io/github/package-json/dependency-version/JanSzewczyk/react-native-szumplate/expo-router?style=flat-square&label=) - File-based routing
-- **[React Navigation](https://reactnavigation.org/)** ![](https://img.shields.io/github/package-json/dependency-version/JanSzewczyk/react-native-szumplate/@react-navigation/native?style=flat-square&label=) - Navigation primitives
+- **[Expo Router](https://docs.expo.dev/router/introduction/)** ![](https://img.shields.io/github/package-json/dependency-version/JanSzewczyk/react-native-sandbox/expo-router?style=flat-square&label=) - File-based routing
+- **[React Navigation](https://reactnavigation.org/)** ![](https://img.shields.io/github/package-json/dependency-version/JanSzewczyk/react-native-sandbox/@react-navigation/native?style=flat-square&label=) - Navigation primitives
 
 ### Styling
-- **[NativeWind](https://www.nativewind.dev/)** ![](https://img.shields.io/github/package-json/dependency-version/JanSzewczyk/react-native-szumplate/nativewind?style=flat-square&label=) - Tailwind for React Native
-- **[Tailwind CSS](https://tailwindcss.com/)** ![](https://img.shields.io/github/package-json/dependency-version/JanSzewczyk/react-native-szumplate/tailwindcss?style=flat-square&label=) - Utility-first CSS
+- **[NativeWind](https://www.nativewind.dev/)** ![](https://img.shields.io/github/package-json/dependency-version/JanSzewczyk/react-native-sandbox/nativewind?style=flat-square&label=) - Tailwind for React Native
+- **[Tailwind CSS](https://tailwindcss.com/)** ![](https://img.shields.io/github/package-json/dependency-version/JanSzewczyk/react-native-sandbox/tailwindcss?style=flat-square&label=) - Utility-first CSS
 
 ### Animation
-- **[React Native Reanimated](https://docs.swmansion.com/react-native-reanimated/)** ![](https://img.shields.io/github/package-json/dependency-version/JanSzewczyk/react-native-szumplate/react-native-reanimated?style=flat-square&label=) - Smooth animations
-- **[React Native Gesture Handler](https://docs.swmansion.com/react-native-gesture-handler/)** ![](https://img.shields.io/github/package-json/dependency-version/JanSzewczyk/react-native-szumplate/react-native-gesture-handler?style=flat-square&label=) - Native gestures
+- **[React Native Reanimated](https://docs.swmansion.com/react-native-reanimated/)** ![](https://img.shields.io/github/package-json/dependency-version/JanSzewczyk/react-native-sandbox/react-native-reanimated?style=flat-square&label=) - Smooth animations
+- **[React Native Gesture Handler](https://docs.swmansion.com/react-native-gesture-handler/)** ![](https://img.shields.io/github/package-json/dependency-version/JanSzewczyk/react-native-sandbox/react-native-gesture-handler?style=flat-square&label=) - Native gestures
 
 ### Validation & Types
-- **[Zod](https://zod.dev/)** ![](https://img.shields.io/github/package-json/dependency-version/JanSzewczyk/react-native-szumplate/zod?style=flat-square&label=) - Schema validation
-- **[T3 Env](https://env.t3.gg/)** ![](https://img.shields.io/github/package-json/dependency-version/JanSzewczyk/react-native-szumplate/@t3-oss/env-core?style=flat-square&label=) - Type-safe environment variables
+- **[Zod](https://zod.dev/)** ![](https://img.shields.io/github/package-json/dependency-version/JanSzewczyk/react-native-sandbox/zod?style=flat-square&label=) - Schema validation
+- **[T3 Env](https://env.t3.gg/)** ![](https://img.shields.io/github/package-json/dependency-version/JanSzewczyk/react-native-sandbox/@t3-oss/env-core?style=flat-square&label=) - Type-safe environment variables
 
 ### Development Tools
-- **[ESLint](https://eslint.org/)** ![](https://img.shields.io/github/package-json/dependency-version/JanSzewczyk/react-native-szumplate/dev/eslint?style=flat-square&label=) - Code linting
-- **[Prettier](https://prettier.io/)** ![](https://img.shields.io/github/package-json/dependency-version/JanSzewczyk/react-native-szumplate/dev/prettier?style=flat-square&label=) - Code formatting
-- **[@szum-tech/prettier-config](https://www.npmjs.com/package/@szum-tech/prettier-config)** ![](https://img.shields.io/github/package-json/dependency-version/JanSzewczyk/react-native-szumplate/dev/@szum-tech/prettier-config?style=flat-square&label=) - Shared Prettier config
+- **[ESLint](https://eslint.org/)** ![](https://img.shields.io/github/package-json/dependency-version/JanSzewczyk/react-native-sandbox/dev/eslint?style=flat-square&label=) - Code linting
+- **[Prettier](https://prettier.io/)** ![](https://img.shields.io/github/package-json/dependency-version/JanSzewczyk/react-native-sandbox/dev/prettier?style=flat-square&label=) - Code formatting
+- **[@szum-tech/prettier-config](https://www.npmjs.com/package/@szum-tech/prettier-config)** ![](https://img.shields.io/github/package-json/dependency-version/JanSzewczyk/react-native-sandbox/dev/@szum-tech/prettier-config?style=flat-square&label=) - Shared Prettier config
 
 ### Expo Modules
 - **expo-blur** - Native blur effects
@@ -828,9 +836,9 @@ This checks for:
 Contributions are welcome! If you'd like to contribute to this project:
 
 1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+2. Create a feature branch (`git checkout -b feature/new-animation-demo`)
 3. Commit your changes using [Conventional Commits](https://www.conventionalcommits.org/)
-4. Push to the branch (`git push origin feature/amazing-feature`)
+4. Push to the branch (`git push origin feature/new-animation-demo`)
 5. Open a Pull Request
 
 Please make sure your code passes all tests and follows the project's coding standards.
@@ -859,8 +867,8 @@ Built with amazing tools from the React Native ecosystem:
 
 - **Author**: [Jan Szewczyk](https://github.com/JanSzewczyk)
 - **Organization**: [Szum-Tech](https://github.com/szum-tech)
-- **Repository**: [github.com/JanSzewczyk/react-native-szumplate](https://github.com/JanSzewczyk/react-native-szumplate)
-- **Issues**: [Report a bug or request a feature](https://github.com/JanSzewczyk/react-native-szumplate/issues)
+- **Repository**: [github.com/JanSzewczyk/react-native-sandbox](https://github.com/JanSzewczyk/react-native-sandbox)
+- **Issues**: [Report a bug or request a feature](https://github.com/JanSzewczyk/react-native-sandbox/issues)
 
 ---
 
@@ -868,8 +876,8 @@ Built with amazing tools from the React Native ecosystem:
 
 **Made with ❤️ by [Szum-Tech](https://github.com/szum-tech)**
 
-If this template helped you, please consider giving it a ⭐ on GitHub!
+If this sandbox inspired you, please consider giving it a ⭐ on GitHub!
 
-[⬆ Back to Top](#-react-native-szumplate)
+[⬆ Back to Top](#-react-native-sandbox)
 
 </div>
