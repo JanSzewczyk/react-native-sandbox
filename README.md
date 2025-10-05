@@ -1,163 +1,232 @@
 <div align="center">
 
-# 📱 React Native Sandbox
+# 📱✨ React Native Sandbox
 
-### Experimental playground for React Native animations and UI patterns
+[![GitHub Stars](https://img.shields.io/github/stars/JanSzewczyk/react-native-sandbox?style=flat-square)](https://github.com/JanSzewczyk/react-native-sandbox/stargazers)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
+[![React Native](https://img.shields.io/badge/React%20Native-0.81-blue?style=flat-square&logo=react)](https://reactnative.dev/)
+[![Expo](https://img.shields.io/badge/Expo-SDK%2054-black?style=flat-square&logo=expo)](https://expo.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
+[![NativeWind](https://img.shields.io/badge/NativeWind-4.2-purple?style=flat-square)](https://www.nativewind.dev/)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Expo SDK](https://img.shields.io/github/package-json/dependency-version/JanSzewczyk/react-native-sandbox/expo??style=flat&logo=expo&label=Expo&color=000020)](https://expo.dev/)
-[![React Native](https://img.shields.io/github/package-json/dependency-version/JanSzewczyk/react-native-sandbox/react-native?style=flat&logo=react&label=React+Native&color=61dafb)](https://reactnative.dev/)
-[![TypeScript](https://img.shields.io/github/package-json/dependency-version/JanSzewczyk/react-native-sandbox/dev/typescript?style=flat&logo=typescript&label=TypeScript&color=3178c6)](https://www.typescriptlang.org/)
+**An experimental playground for exploring advanced React Native animations, gestures, and UI patterns — featuring Twitter-style scrolling, LinkedIn tabs, and modern mobile interactions! 🚀📱**
 
-[Getting Started](#-getting-started) • [Features](#-features) • [Documentation](#-documentation) • [Contributing](#-contributing)
+[✨ Features](#-features) • [🎯 Getting Started](#-getting-started) • [📖 Table of Contents](#-table-of-contents) • [⚡ Animations](#-animations) • [🎨 Styling](#-styling-with-nativewind)
 
 </div>
 
 ---
 
-## 👋 Hello there!
+## 👋 Welcome to React Native Sandbox!
 
-**React Native Sandbox** is an experimental playground for exploring advanced animations, gestures, and UI patterns in React Native. This project showcases various implementations of popular mobile app interactions, including Twitter-style scrolling headers, LinkedIn-inspired tab layouts, bottom sheets, and animated navigation patterns.
+Hey there, mobile developer! 🎉 Welcome to **React Native Sandbox** — your ultimate experimental playground for mastering advanced React Native animations, gestures, and real-world UI patterns!
 
-### What's Inside?
+### 🎯 What is React Native Sandbox?
 
-- **🎬 Animation Demos**: Reanimated-powered examples of smooth, native-feeling animations
-- **📱 UI Patterns**: Real-world inspired implementations (Twitter scroll, LinkedIn tabs)
-- **🧪 Experimentation Space**: A sandbox for testing new ideas and techniques
-- **🔒 Type-Safe**: Full TypeScript + Zod runtime validation
-- **⚡ Best Practices**: Modern React Native architecture with Expo Router
-- **🛠️ Developer Experience**: ESLint, Prettier, and optimized tooling
+React Native Sandbox is a comprehensive demonstration project showcasing production-ready implementations of popular mobile app interactions. From Twitter's smooth scrolling headers to LinkedIn's elegant tab layouts, this sandbox serves as both a learning resource and a component library for modern React Native development.
+
+### 💡 The Problem It Solves
+
+Building sophisticated mobile UI experiences requires:
+- **Complex Animations** — Smooth, native-feeling 60 FPS animations
+- **Advanced Gestures** — Natural touch interactions and swipe gestures
+- **Real-World Patterns** — Implementations of popular app UIs (Twitter, LinkedIn)
+- **Performance Optimization** — Running animations on the UI thread
+- **Type Safety** — Full TypeScript support across the codebase
+- **Modern Tooling** — Latest Expo SDK with file-based routing
+
+### ✅ The Solution
+
+React Native Sandbox provides:
+- 🎬 **Animation Demos** — Reanimated-powered smooth animations
+- 📱 **Real UI Patterns** — Twitter scroll, LinkedIn tabs, bottom sheets
+- 🧪 **Experimentation Space** — Perfect for testing new ideas
+- 🔒 **Type-Safe** — Full TypeScript + Zod runtime validation
+- ⚡ **Best Practices** — Modern React Native architecture with Expo Router
+- 🛠️ **Developer Experience** — ESLint, Prettier, and optimized tooling
+
+### 🌟 What Makes It Special?
+
+- **Production-Ready Components** — Real-world inspired implementations
+- **Reanimated 4.1** — Butter-smooth 60 FPS animations on native thread
+- **Expo Router 6** — File-based routing with type-safe navigation
+- **NativeWind 4.2** — Tailwind CSS for React Native styling
+- **T3 Env + Zod** — Type-safe environment variables with runtime validation
+- **Cross-Platform** — Works on iOS, Android, and Web
+- **Modern Stack** — React 19, TypeScript 5.9, Expo SDK 54
+
+---
 
 ## ✨ Features
 
-### 🎬 Demo Screens
-- **Twitter Scroll** - Animated header that expands/collapses on scroll
-- **LinkedIn Tabs** - Custom tab layout with animated icons and smooth transitions
-- **Bottom Sheet** - Interactive draggable bottom sheet component
-- **Animated Header** - Various header animation patterns
-- **Top Navigation** - Hourly data tabs with dynamic content rendering
+### 🎬 Animation Demos
 
-### 🎯 Core Technologies
-- **React Native 0.81** with **React 19** - Latest stable versions
-- **Expo SDK 54** - Managed workflow with EAS Build support
-- **TypeScript 5.9** - Full type safety across the entire codebase
-- **Metro Bundler** - Optimized for fast refresh and bundling
+- **Twitter Scroll** — Animated header that expands/collapses on scroll
+- **LinkedIn Tabs** — Custom tab layout with animated icons and smooth transitions
+- **Bottom Sheet** — Interactive draggable bottom sheet component
+- **Animated Header** — Various header animation patterns
+- **Top Navigation** — Hourly data tabs with dynamic content rendering
+
+### 🚀 Core Technologies
+
+- **React Native 0.81** with **React 19** — Latest stable versions
+- **Expo SDK 54** — Managed workflow with EAS Build support
+- **TypeScript 5.9** — Full type safety across the entire codebase
+- **Metro Bundler** — Optimized for fast refresh and bundling
 
 ### 🧭 Navigation & Routing
-- **Expo Router 6** - File-based routing with deep linking support
-- **React Navigation 7** - Native stack and bottom tabs navigation
-- **Type-safe routing** - Fully typed navigation params
 
-### 🎨 Styling & UI
-- **NativeWind 4.2.1** - Tailwind CSS for React Native
-- **Tailwind CSS 3.4** - Utility-first CSS framework
-- **Expo Blur** - Native blur effects
-- **Expo Image** - Optimized image component
-- **Vector Icons** - Comprehensive icon library
+- **Expo Router 6** — File-based routing with deep linking support
+- **React Navigation 7** — Native stack and bottom tabs navigation
+- **Type-safe routing** — Fully typed navigation params
+
+### 🎨 Styling
+
+- **NativeWind 4.2.1** — Tailwind CSS for React Native
+- **Tailwind CSS 3.4** — Utility-first CSS framework
+- **Expo Blur** — Native blur effects
+- **Expo Image** — Optimized image component
+- **Vector Icons** — Comprehensive icon library
 
 ### ⚡ Animations & Gestures
-- **Reanimated 4.1** - 60 FPS native animations
-- **Gesture Handler** - Native touch handling
-- **React Native Worklets** - Run JavaScript on UI thread
+
+- **Reanimated 4.1** — 60 FPS native animations running on UI thread
+- **Gesture Handler** — Native touch handling with smooth interactions
+- **React Native Worklets** — Run JavaScript on UI thread for performance
 
 ### 🔒 Type Safety & Validation
-- **TypeScript** - Static type checking
-- **Zod 4.1** - Runtime schema validation
-- **T3 Env** - Type-safe environment variables
 
-### 🛠️ Developer Experience
-- **ESLint 9** - Code quality and consistency
-- **Prettier** - Code formatting with [@szum-tech/prettier-config](https://www.npmjs.com/package/@szum-tech/prettier-config)
-- **Fast Refresh** - Instant feedback during development
-- **Expo DevTools** - Powerful debugging tools
+- **TypeScript** — Static type checking with strict mode
+- **Zod 4.1** — Runtime schema validation for data integrity
+- **T3 Env** — Type-safe environment variables with build-time checks
+
+### 🧹 Code Quality
+
+- **ESLint 9** — Code quality and consistency enforcement
+- **Prettier** — Code formatting with [@szum-tech/prettier-config](https://www.npmjs.com/package/@szum-tech/prettier-config)
+- **Fast Refresh** — Instant feedback during development
+- **Expo DevTools** — Powerful debugging tools
 
 ### 📱 Platform Support
-- ✅ **iOS** - Native iOS apps
-- ✅ **Android** - Native Android apps
-- ✅ **Web** - React Native Web support
+
+- ✅ **iOS** — Native iOS apps (iPhone & iPad)
+- ✅ **Android** — Native Android apps (phones & tablets)
+- ✅ **Web** — React Native Web support
 
 ---
 
 ## 📖 Table of Contents
 
-* [✨ Features](#-features)
-* [📖 Table of Contents](#-table-of-contents)
-* [📋 Prerequisites](#-prerequisites)
-* [🎯 Getting Started](#-getting-started)
-* [📁 Project Structure](#-project-structure)
-* [📃 Available Scripts](#-available-scripts)
-* [🔐 Environment Variables](#-environment-variables)
-* [🎨 Styling with NativeWind](#-styling-with-nativewind)
-* [⚡ Animations](#-animations)
-* [🧭 Navigation](#-navigation)
-* [🔒 Type Safety and Validation](#-type-safety-and-validation)
-* [🧹 Code Quality](#-code-quality)
-* [🚀 Building for Production](#-building-for-production)
-* [📦 Updating Dependencies](#-updating-dependencies)
-* [🔧 Troubleshooting](#-troubleshooting)
-* [🛠️ Tech Stack](#-tech-stack)
-* [🤝 Contributing](#-contributing)
-* [📜 License](#-license)
-* [🙏 Acknowledgments](#-acknowledgments)
-* [📧 Support & Contact](#-support--contact)
-
----
-
-## 📋 Prerequisites
-
-Before you begin, ensure you have the following installed:
-
-- **Node.js** 22+ - [Download](https://nodejs.org/)
-- **npm** (comes with Node.js) or your preferred package manager
-- **Git** - [Download](https://git-scm.com/)
-
-### Platform-Specific Requirements
-
-#### For iOS Development (macOS only)
-- **Xcode** 14+ - [Download from App Store](https://apps.apple.com/us/app/xcode/id497799835)
-- **iOS Simulator** (included with Xcode)
-- **CocoaPods** (installed automatically by Expo)
-
-#### For Android Development
-- **Android Studio** - [Download](https://developer.android.com/studio)
-- **Android SDK** (API 33+)
-- **Android Emulator** or physical device
-
-#### For Web Development
-- Any modern web browser (Chrome, Firefox, Safari, Edge)
+- [Features](#-features)
+- [Getting Started](#-getting-started)
+  - [Prerequisites](#-prerequisites)
+  - [Installation](#installation)
+  - [Running the App](#running-the-app)
+- [Environment Variables](#-environment-variables)
+- [Available Scripts](#-available-scripts)
+- [Project Structure](#-project-structure)
+- [Tech Stack](#️-tech-stack)
+- [Styling with NativeWind](#-styling-with-nativewind)
+- [Animations](#-animations)
+- [Navigation](#-navigation)
+- [Type Safety and Validation](#-type-safety-and-validation)
+- [Code Quality](#-code-quality)
+- [Building for Production](#-building-for-production)
+- [Troubleshooting](#-troubleshooting)
+- [Contributing](#-contributing)
+- [License](#-license)
+- [Acknowledgments](#-acknowledgments)
+- [Contact](#-contact)
 
 ---
 
 ## 🎯 Getting Started
 
-### 1️⃣ Clone the Repository
+### 📋 Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+| Requirement | Version | Description |
+|------------|---------|-------------|
+| **Node.js** | 18.x or higher | JavaScript runtime environment |
+| **npm/yarn/pnpm** | Latest | Package manager of your choice |
+| **Git** | Latest | Version control system |
+| **Expo CLI** | Latest | Expo command-line tools |
+
+#### Platform-Specific Requirements
+
+<details>
+<summary><b>🍎 iOS Development (macOS only)</b></summary>
+
+- **Xcode 14+** — [Download from App Store](https://apps.apple.com/us/app/xcode/id497799835)
+- **iOS Simulator** — Included with Xcode
+- **CocoaPods** — Installed automatically by Expo
+
+</details>
+
+<details>
+<summary><b>🤖 Android Development</b></summary>
+
+- **Android Studio** — [Download](https://developer.android.com/studio)
+- **Android SDK** — API 33+ required
+- **Android Emulator** — Or physical device with USB debugging
+
+</details>
+
+<details>
+<summary><b>🌐 Web Development</b></summary>
+
+- Any modern web browser (Chrome, Firefox, Safari, Edge)
+
+</details>
+
+### Installation
+
+Follow these steps to get your development environment running:
+
+#### 1️⃣ Clone the Repository
 
 ```bash
 git clone https://github.com/JanSzewczyk/react-native-sandbox.git
 cd react-native-sandbox
 ```
 
-### 2️⃣ Install Dependencies
+#### 2️⃣ Install Dependencies
 
 ```bash
 npm install
 ```
 
-### 3️⃣ Configure Environment Variables
+Or use your preferred package manager:
 
-Copy the example environment file and configure it:
+```bash
+# Using yarn
+yarn install
+
+# Using pnpm
+pnpm install
+```
+
+#### 3️⃣ Configure Environment Variables
+
+Copy the example environment file:
 
 ```bash
 cp .env.example .env.local
 ```
 
-Edit `.env.local` and add your environment variables:
+Edit `.env.local` and configure your variables:
 
-```bash
-EXPO_PUBLIC_FEATURE_FLAG_X=your_value_here
+```env
+EXPO_PUBLIC_FEATURE_FLAG_X=true
+# Add other variables as needed
 ```
 
-### 4️⃣ Start the Development Server
+See [Environment Variables](#-environment-variables) section for details.
+
+### Running the App
+
+#### Start the Development Server
 
 ```bash
 npm run start
@@ -165,9 +234,7 @@ npm run start
 
 This will start the Expo development server and show a QR code.
 
-### 5️⃣ Run on Your Target Platform
-
-#### 📱 iOS (macOS only)
+#### Run on iOS Simulator (macOS only)
 
 ```bash
 npm run ios
@@ -175,7 +242,7 @@ npm run ios
 
 Or press `i` in the terminal after starting the dev server.
 
-#### 🤖 Android
+#### Run on Android Emulator
 
 ```bash
 npm run android
@@ -183,7 +250,7 @@ npm run android
 
 Or press `a` in the terminal after starting the dev server.
 
-#### 🌐 Web
+#### Run in Web Browser
 
 ```bash
 npm run web
@@ -191,131 +258,27 @@ npm run web
 
 Or press `w` in the terminal after starting the dev server.
 
-#### 📲 Physical Device
+#### Run on Physical Device
 
-1. Install the **Expo Go** app on your device
+1. Install **Expo Go** app on your device:
   - [iOS App Store](https://apps.apple.com/app/expo-go/id982107779)
-  - [Android Play Store](https://play.google.com/store/apps/details?id=host.exp.exponent)
+  - [Google Play Store](https://play.google.com/store/apps/details?id=host.exp.exponent)
+
 2. Scan the QR code shown in the terminal
+
 3. The app will open in Expo Go
 
-> **Tip**: For faster development, use `npm run ios` or `npm run android` to build a development build instead of using Expo Go.
-
----
-
-## 📁 Project Structure
-
-```
-react-native-sandbox/
-├── app/                        # Expo Router file-based routes
-│   ├── linkedin-tabs/          # LinkedIn-style tab navigation demo
-│   ├── top-navs/               # Top navigation with hourly tabs
-│   │   ├── _layout.tsx         # Tab navigation layout
-│   │   ├── index.tsx           # First tab (hourly data)
-│   │   ├── two.tsx             # Second tab
-│   │   ├── three.tsx           # Third tab
-│   │   └── four.tsx            # Fourth tab
-│   ├── _layout.tsx             # Root layout with navigation
-│   ├── index.tsx               # Home screen with demo links
-│   ├── twitter-scroll.tsx      # Twitter-style scrolling header
-│   ├── bottom-sheet.tsx        # Bottom sheet interaction demo
-│   ├── animated-header.tsx     # Animated header patterns
-│   └── global.css              # Global Tailwind styles
-├── components/                 # Reusable UI components
-├── data/                       # Data models and mock data
-├── assets/                     # Static assets (images, fonts)
-├── .env.example                # Environment variables template
-├── app.config.ts               # Expo app configuration
-├── babel.config.js             # Babel configuration
-├── eslint.config.cjs           # ESLint configuration
-├── metro.config.cjs            # Metro bundler configuration
-├── prettier.config.mjs         # Prettier configuration
-├── tailwind.config.ts          # Tailwind CSS configuration
-├── tsconfig.json               # TypeScript configuration
-└── package.json                # Project dependencies and scripts
-```
-
-### Key Directories
-
-- **`app/`** - File-based routing with Expo Router. Each file becomes a demo screen.
-- **`app/linkedin-tabs/`** - LinkedIn-inspired custom tab layout implementation.
-- **`app/top-navs/`** - Top navigation tabs with dynamic hourly content.
-- **`components/`** - Reusable React Native components.
-- **`data/`** - Mock data and schemas for demos.
-- **`assets/`** - Images, fonts, and other static resources.
-
-### Important Configuration Files
-
-- **`app.config.ts`** - Expo app configuration (name, version, bundle IDs, platform settings)
-- **`babel.config.js`** - Babel transpiler configuration (Reanimated plugin must be last!)
-- **`eslint.config.cjs`** - ESLint 9 code quality rules and linting standards
-- **`metro.config.cjs`** - Metro bundler configuration for JavaScript transformation
-- **`prettier.config.mjs`** - Prettier code formatting with @szum-tech/prettier-config
-- **`tailwind.config.ts`** - Tailwind CSS customization (colors, spacing, fonts, etc.)
-- **`tsconfig.json`** - TypeScript compiler options, strict mode, and path aliases
-
----
-
-## 📃 Available Scripts
-
-| Command | Description |
-|---------|-------------|
-| `npm run start` | Start the Expo development server |
-| `npm run android` | Run the app on Android device/emulator |
-| `npm run ios` | Run the app on iOS simulator (macOS only) |
-| `npm run web` | Run the app in web browser |
-| `npm run lint` | Run ESLint to check code quality |
-| `npm run prettier:check` | Check code formatting with Prettier |
-| `npm run prettier:write` | Format code with Prettier |
-| `npm run sync-versions` | Sync package versions from package.json to README |
-
-### Development Workflow
-
-```bash
-# Start development server
-npm run start
-
-# In another terminal, run platform-specific commands
-npm run ios      # or android, or web
-
-# Check code quality before committing
-npm run lint
-npm run prettier:check
-```
+💡 **Tip:** For faster development and access to custom native modules, use `npm run ios` or `npm run android` to build a development build instead of using Expo Go.
 
 ---
 
 ## 🔐 Environment Variables
 
-### Setup
+This project uses [T3 Env](https://env.t3.gg/) for type-safe environment variable management with runtime validation using Zod.
 
-1. Copy the example file:
-```bash
-cp .env.example .env.local
-```
+### Configuration Location
 
-2. Add your environment variables:
-```bash
-# .env.local
-EXPO_PUBLIC_FEATURE_FLAG_X=true
-```
-
-### Naming Convention
-
-Expo requires public environment variables to be prefixed with `EXPO_PUBLIC_`:
-
-```bash
-EXPO_PUBLIC_API_URL=https://api.example.com
-EXPO_PUBLIC_ENABLE_FEATURE_X=true
-```
-
-> **Important**: Never commit `.env.local` or any file containing secrets. Only commit `.env.example` with placeholder values.
-
-### 💻 Environment Variables Handling
-
-This template uses **T3 Env** with **Zod** for runtime validation of environment variables in `src/data/env.ts`.
-
-#### Configuration
+Environment validation is configured in `src/data/env.ts`:
 
 ```typescript
 import { createEnv } from "@t3-oss/env-core";
@@ -324,35 +287,71 @@ import { z } from "zod";
 export const env = createEnv({
   // Only variables with this prefix are allowed on the client
   clientPrefix: "EXPO_PUBLIC_",
-
+  
   // Define and validate your client-side environment variables
   client: {
     EXPO_PUBLIC_API_URL: z.string().url(),
     EXPO_PUBLIC_FEATURE_FLAG_X: z
       .enum(["true", "false"])
-      .transform((value) => value === "true")
+      .transform((value) => value === "true"),
   },
-
+  
   // Map process.env variables to your schema
   runtimeEnv: {
     EXPO_PUBLIC_API_URL: process.env.EXPO_PUBLIC_API_URL,
-    EXPO_PUBLIC_FEATURE_FLAG_X: process.env.EXPO_PUBLIC_FEATURE_FLAG_X
+    EXPO_PUBLIC_FEATURE_FLAG_X: process.env.EXPO_PUBLIC_FEATURE_FLAG_X,
   },
-
+  
   // Treat empty strings as undefined
-  emptyStringAsUndefined: true
+  emptyStringAsUndefined: true,
 });
 ```
 
-#### Benefits
+### Environment Variables Template
 
-- ✅ **Type Safety** - Full TypeScript autocomplete for `env.EXPO_PUBLIC_*`
-- ✅ **Runtime Validation** - Validates variables at app startup using Zod schemas
-- ✅ **Build-Time Checks** - Fails fast if required variables are missing
-- ✅ **Transform Values** - Convert strings to booleans, numbers, or custom types
-- ✅ **Single Source of Truth** - One place to define all environment variables
+Create a `.env.local` file in the root directory:
 
-#### Usage
+```env
+# ==============================================
+# CLIENT-SIDE VARIABLES (exposed to app)
+# Must be prefixed with EXPO_PUBLIC_
+# ==============================================
+
+# API Configuration
+EXPO_PUBLIC_API_URL=https://api.example.com
+
+# Feature Flags
+EXPO_PUBLIC_FEATURE_FLAG_X=true
+EXPO_PUBLIC_ENABLE_ANIMATIONS=true
+
+# Analytics (optional)
+EXPO_PUBLIC_ANALYTICS_ID=your_analytics_id
+
+# ==============================================
+# ADD YOUR VARIABLES HERE
+# ==============================================
+```
+
+### Important Notes
+
+⚠️ **Expo requires public environment variables to be prefixed with `EXPO_PUBLIC_`**
+
+- ✅ `EXPO_PUBLIC_API_URL` — Will be available in the app
+- ❌ `API_URL` — Will NOT be available in the app
+
+🔒 **Never commit `.env.local` or files containing secrets!**
+
+Only commit `.env.example` with placeholder values.
+
+### Benefits of T3 Env
+
+- ✅ **Type Safety** — Full TypeScript autocomplete for `env.EXPO_PUBLIC_*`
+- ✅ **Runtime Validation** — Validates variables at app startup using Zod schemas
+- ✅ **Build-Time Checks** — Fails fast if required variables are missing
+- ✅ **Transform Values** — Convert strings to booleans, numbers, or custom types
+- ✅ **Single Source of Truth** — One place to define all environment variables
+
+### Using Environment Variables
 
 ```typescript
 import { env } from "~/data/env";
@@ -362,94 +361,289 @@ const apiUrl = env.EXPO_PUBLIC_API_URL; // string
 const isFeatureEnabled = env.EXPO_PUBLIC_FEATURE_FLAG_X; // boolean
 ```
 
-#### Adding New Variables
+### Adding New Variables
 
-1. Add to `.env.local`:
+1. **Add to `.env.local`:**
+   ```env
+   EXPO_PUBLIC_NEW_VARIABLE=value
+   ```
+
+2. **Define validation in `src/data/env.ts`:**
+   ```typescript
+   client: {
+     EXPO_PUBLIC_NEW_VARIABLE: z.string().min(1)
+   }
+   
+   runtimeEnv: {
+     EXPO_PUBLIC_NEW_VARIABLE: process.env.EXPO_PUBLIC_NEW_VARIABLE
+   }
+   ```
+
+3. **Use in your app:**
+   ```typescript
+   import { env } from "~/data/env";
+   console.log(env.EXPO_PUBLIC_NEW_VARIABLE);
+   ```
+
+---
+
+## 📃 Available Scripts
+
+### 🚀 Development
+
+| Command | Description |
+|---------|-------------|
+| `npm run start` | Start Expo development server |
+| `npm run ios` | Run on iOS simulator (macOS only) |
+| `npm run android` | Run on Android emulator/device |
+| `npm run web` | Run in web browser |
+
+### 🧹 Code Quality
+
+| Command | Description |
+|---------|-------------|
+| `npm run lint` | Run ESLint to check code quality |
+| `npm run prettier:check` | Check code formatting with Prettier |
+| `npm run prettier:write` | Format code with Prettier |
+
+### 📦 Build & Deployment
+
+| Command | Description |
+|---------|-------------|
+| `npm run sync-versions` | Sync package versions from package.json to README |
+
+### 🔍 Development Workflow
+
+Recommended workflow before committing:
+
 ```bash
-EXPO_PUBLIC_NEW_VARIABLE=value
+# Check code quality
+npm run lint
+
+# Fix formatting
+npm run prettier:write
+
+# Test on your target platform
+npm run ios    # or android, or web
 ```
 
-2. Define validation in `src/data/env.ts`:
-3.
-```typescript
-client: {
-  EXPO_PUBLIC_NEW_VARIABLE: z.string().min(1)
-}
-runtimeEnv: {
-  EXPO_PUBLIC_NEW_VARIABLE: process.env.EXPO_PUBLIC_NEW_VARIABLE
-}
+---
+
+## 📁 Project Structure
+
+```
+react-native-sandbox/
+│
+├── 📁 app/                         # Expo Router file-based routes
+│   ├── 📁 linkedin-tabs/           # LinkedIn-style tab navigation demo
+│   │   ├── _layout.tsx
+│   │   └── index.tsx
+│   │
+│   ├── 📁 top-navs/                # Top navigation with hourly tabs
+│   │   ├── _layout.tsx             # Tab navigation layout
+│   │   ├── index.tsx               # First tab (hourly data)
+│   │   ├── two.tsx                 # Second tab
+│   │   ├── three.tsx               # Third tab
+│   │   └── four.tsx                # Fourth tab
+│   │
+│   ├── _layout.tsx                 # Root layout with navigation
+│   ├── index.tsx                   # Home screen with demo links
+│   ├── twitter-scroll.tsx          # Twitter-style scrolling header
+│   ├── bottom-sheet.tsx            # Bottom sheet interaction demo
+│   ├── animated-header.tsx         # Animated header patterns
+│   └── global.css                  # Global Tailwind styles
+│
+├── 📁 components/                  # Reusable UI components
+│   ├── 📁 ui/                      # Base UI components
+│   └── 📁 animations/              # Animation components
+│
+├── 📁 data/                        # Data models and configuration
+│   ├── env.ts                      # Environment variable validation
+│   └── mock-data.ts                # Mock data for demos
+│
+├── 📁 assets/                      # Static assets
+│   ├── images/                     # Image files
+│   └── fonts/                      # Custom fonts
+│
+├── 📁 src/                         # Source code (if using src directory)
+│
+├── 📄 .env.example                 # Environment variables template
+├── 📄 .env.local                   # Local environment (gitignored)
+├── 📄 app.config.ts                # Expo app configuration
+├── 📄 babel.config.js              # Babel configuration
+├── 📄 eslint.config.cjs            # ESLint configuration
+├── 📄 metro.config.cjs             # Metro bundler configuration
+├── 📄 prettier.config.mjs          # Prettier configuration
+├── 📄 tailwind.config.ts           # Tailwind CSS configuration
+├── 📄 tsconfig.json                # TypeScript configuration
+└── 📄 package.json                 # Dependencies and scripts
 ```
 
-3. Use in your app:
-4.
-```typescript
-import { env } from "~/data/env";
+### 📂 Directory Descriptions
 
-console.log(env.EXPO_PUBLIC_NEW_VARIABLE);
-```
+#### Core Directories
+
+- **`app/`** — File-based routing with Expo Router. Each file becomes a screen/route
+- **`app/linkedin-tabs/`** — LinkedIn-inspired custom tab layout implementation
+- **`app/top-navs/`** — Top navigation tabs with dynamic hourly content
+- **`components/`** — Reusable React Native components for UI
+- **`data/`** — Mock data, schemas, and environment configuration
+- **`assets/`** — Images, fonts, and other static resources
+
+#### Configuration Files
+
+- **`app.config.ts`** — Expo app configuration (name, version, bundle IDs, platform settings)
+- **`babel.config.js`** — Babel transpiler configuration (**Reanimated plugin must be last!**)
+- **`eslint.config.cjs`** — ESLint 9 code quality rules and linting standards
+- **`metro.config.cjs`** — Metro bundler configuration for JavaScript transformation
+- **`prettier.config.mjs`** — Prettier code formatting with @szum-tech/prettier-config
+- **`tailwind.config.ts`** — Tailwind CSS customization (colors, spacing, fonts, etc.)
+- **`tsconfig.json`** — TypeScript compiler options, strict mode, and path aliases
+
+---
+
+## 🛠️ Tech Stack
+
+### 🎯 Core Framework
+
+- **[React Native 0.81](https://reactnative.dev/)** — Cross-platform mobile framework
+- **[React 19](https://react.dev/)** — Latest React with concurrent features
+- **[Expo SDK 54](https://expo.dev/)** — Development platform with managed workflow
+- **[TypeScript 5.9](https://www.typescriptlang.org/)** — Type-safe JavaScript with strict mode
+- **[Metro Bundler](https://facebook.github.io/metro/)** — Fast JavaScript bundler
+
+### 🧭 Navigation
+
+- **[Expo Router 6](https://docs.expo.dev/router/introduction/)** — File-based routing with deep linking
+- **[React Navigation 7](https://reactnavigation.org/)** — Navigation primitives for native stack and tabs
+
+### 🎨 Styling
+
+- **[NativeWind 4.2.1](https://www.nativewind.dev/)** — Tailwind CSS for React Native
+- **[Tailwind CSS 3.4](https://tailwindcss.com/)** — Utility-first CSS framework
+- **[Expo Blur](https://docs.expo.dev/versions/latest/sdk/blur-view/)** — Native blur effects
+- **[Expo Image](https://docs.expo.dev/versions/latest/sdk/image/)** — Optimized image component
+- **[@expo/vector-icons](https://icons.expo.fyi/)** — Comprehensive icon library
+
+### ⚡ Animations & Gestures
+
+- **[React Native Reanimated 4.1](https://docs.swmansion.com/react-native-reanimated/)** — Smooth 60 FPS animations on UI thread
+- **[React Native Gesture Handler](https://docs.swmansion.com/react-native-gesture-handler/)** — Native touch and gesture handling
+- **[React Native Worklets](https://docs.swmansion.com/react-native-reanimated/docs/fundamentals/glossary/#worklet)** — Run JavaScript on UI thread
+
+### 🔒 Type Safety & Validation
+
+- **[TypeScript](https://www.typescriptlang.org/)** — Static type checking
+- **[Zod 4.1](https://zod.dev/)** — Runtime schema validation
+- **[T3 Env](https://env.t3.gg/)** — Type-safe environment variables
+
+### 🧹 Code Quality
+
+- **[ESLint 9](https://eslint.org/)** — JavaScript/TypeScript linting
+- **[Prettier](https://prettier.io/)** — Code formatting
+- **[@szum-tech/prettier-config](https://www.npmjs.com/package/@szum-tech/prettier-config)** — Shared Prettier configuration
+
+### 📦 Expo Modules
+
+- **expo-blur** — Native blur effects
+- **expo-font** — Custom font loading
+- **expo-haptics** — Haptic feedback
+- **expo-image** — Optimized image component
+- **expo-linking** — Deep linking support
+- **expo-status-bar** — Status bar control
+- **expo-system-ui** — System UI customization
+- **expo-web-browser** — In-app browser
 
 ---
 
 ## 🎨 Styling with NativeWind
 
-This template uses **NativeWind 4.2**, which brings Tailwind CSS to React Native.
+This project uses **NativeWind 4.2**, which brings Tailwind CSS to React Native with full TypeScript support.
 
-### Usage
+### Basic Usage
 
-```tsx
+```typescript
 import { View, Text } from 'react-native';
 
 export default function MyComponent() {
   return (
     <View className="flex-1 items-center justify-center bg-white">
       <Text className="text-2xl font-bold text-blue-500">
-        Hello NativeWind!
+        Hello NativeWind! 🎨
       </Text>
     </View>
   );
 }
 ```
 
-### Configuration
+### Customizing Tailwind
 
-Tailwind configuration is in `tailwind.config.ts`. Customize colors, spacing, fonts, and more:
+Customize your design system in `tailwind.config.ts`:
 
 ```typescript
-// tailwind.config.ts
-module.exports = {
-  content: ['./src/**/*.{js,jsx,ts,tsx}'],
+import type { Config } from 'tailwindcss';
+
+const config: Config = {
+  content: ['./app/**/*.{js,jsx,ts,tsx}', './components/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
       colors: {
-        primary: '#your-color',
+        primary: '#your-custom-color',
+        secondary: '#another-color',
+      },
+      spacing: {
+        '128': '32rem',
+      },
+      fontFamily: {
+        custom: ['CustomFont', 'sans-serif'],
       },
     },
   },
+  plugins: [],
 };
+
+export default config;
 ```
 
 ### Global Styles
 
-Global CSS is imported in `src/app/global.css` and loaded in the root layout (`src/app/_layout.tsx`).
+Global CSS is imported in `app/global.css` and loaded in the root layout (`app/_layout.tsx`):
+
+```css
+/* app/global.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom global styles */
+.my-custom-class {
+  /* Your custom CSS */
+}
+```
 
 ### IDE Support
 
-For VSCode, install the [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) extension for autocomplete and syntax highlighting.
+For VSCode, install the [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) extension for:
+- ✅ Autocomplete for class names
+- ✅ Syntax highlighting
+- ✅ Linting and validation
+- ✅ Hover previews
 
 ---
 
 ## ⚡ Animations
 
-This template includes **Reanimated 4.1** for butter-smooth, 60 FPS animations that run on the native thread.
+This project uses **Reanimated 4.1** for butter-smooth, 60 FPS animations that run on the native thread.
 
-### Usage Example
+### Basic Animation Example
 
-```tsx
+```typescript
 import Animated, {
   useSharedValue,
   useAnimatedStyle,
-  withSpring
+  withSpring,
 } from 'react-native-reanimated';
+import { Pressable } from 'react-native';
 
 export default function AnimatedBox() {
   const offset = useSharedValue(0);
@@ -459,17 +653,28 @@ export default function AnimatedBox() {
   }));
 
   return (
-    <Animated.View
-      style={[styles.box, animatedStyles]}
+    <Pressable
       onPress={() => {
         offset.value = withSpring(offset.value + 50);
       }}
-    />
+    >
+      <Animated.View 
+        style={[styles.box, animatedStyles]}
+        className="w-20 h-20 bg-blue-500 rounded-lg"
+      />
+    </Pressable>
   );
 }
 ```
 
-### Important: Babel Configuration
+### Animation Demos in This Project
+
+1. **Twitter Scroll** — Header that expands/collapses based on scroll position
+2. **LinkedIn Tabs** — Animated tab indicators with smooth transitions
+3. **Bottom Sheet** — Gesture-driven draggable sheet
+4. **Animated Header** — Various header animation patterns
+
+### Important: Babel Plugin Configuration
 
 Reanimated requires a Babel plugin that **must be the last plugin** in your `babel.config.js`:
 
@@ -478,15 +683,17 @@ module.exports = {
   presets: ['babel-preset-expo'],
   plugins: [
     // ... other plugins
-    'react-native-reanimated/plugin', // Must be last!
+    'react-native-reanimated/plugin', // ⚠️ Must be last!
   ],
 };
 ```
 
-### Troubleshooting
+### Troubleshooting Animations
 
-If animations aren't working, clear the cache:
+If animations aren't working:
+
 ```bash
+# Clear Metro cache
 npx expo start -c
 ```
 
@@ -494,13 +701,13 @@ npx expo start -c
 
 ## 🧭 Navigation
 
-This template uses **Expo Router 6** for file-based routing with deep linking support.
+This project uses **Expo Router 6** for file-based routing with deep linking and type-safe navigation.
 
-### File-Based Routing
+### File-Based Routing Structure
 
 ```
-src/app/
-├── _layout.tsx          # Root layout
+app/
+├── _layout.tsx          # Root layout (/)
 ├── index.tsx            # Home screen (/)
 ├── about.tsx            # About screen (/about)
 └── profile/
@@ -509,35 +716,68 @@ src/app/
     └── settings.tsx     # Settings (/profile/settings)
 ```
 
-### Navigation Example
+### Navigation Examples
 
-```tsx
+```typescript
 import { Link, router } from 'expo-router';
 
-// Using Link component
+// Using Link component (declarative)
 <Link href="/about">Go to About</Link>
 
 // Using router imperatively
 router.push('/profile/123');
 router.back();
+router.replace('/home');
+
+// With params
+router.push({
+  pathname: '/profile/[id]',
+  params: { id: '123' }
+});
 ```
 
-### Type-Safe Routes
+### Type-Safe Navigation
 
-Expo Router provides type-safe navigation with autocomplete for all routes.
+Expo Router provides full TypeScript support with autocomplete for all routes:
+
+```typescript
+// Type-safe route params
+import { useLocalSearchParams } from 'expo-router';
+
+export default function ProfileScreen() {
+  const { id } = useLocalSearchParams<{ id: string }>();
+  
+  return <Text>Profile ID: {id}</Text>;
+}
+```
 
 ---
 
 ## 🔒 Type Safety and Validation
 
-### TypeScript
+### TypeScript Configuration
 
-Full TypeScript support with strict mode enabled:
-- Static type checking at compile time
-- IntelliSense and autocomplete in your IDE
-- Fewer runtime errors
+Full TypeScript support with strict mode enabled in `tsconfig.json`:
 
-### Zod Runtime Validation
+```json
+{
+  "compilerOptions": {
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true
+  }
+}
+```
+
+**Benefits:**
+- ✅ Static type checking at compile time
+- ✅ IntelliSense and autocomplete in your IDE
+- ✅ Catch errors before runtime
+- ✅ Better refactoring support
+
+### Runtime Validation with Zod
 
 Use Zod for runtime validation of:
 - API responses
@@ -548,31 +788,43 @@ Use Zod for runtime validation of:
 ```typescript
 import { z } from 'zod';
 
+// Define schema
 const UserSchema = z.object({
   id: z.string(),
-  name: z.string(),
+  name: z.string().min(1),
   email: z.string().email(),
+  age: z.number().positive(),
 });
 
 // Validate and parse
-const user = UserSchema.parse(data);
+const user = UserSchema.parse(apiResponse);
+
+// Type inference
+type User = z.infer<typeof UserSchema>;
 ```
 
 ---
 
 ## 🧹 Code Quality
 
-### Linting
+### ESLint
 
 ESLint 9 is configured with Expo's recommended rules:
 
 ```bash
+# Check code quality
 npm run lint
 ```
 
-### Formatting
+Configuration in `eslint.config.cjs` includes:
+- TypeScript support
+- React Native rules
+- Expo-specific rules
+- Import sorting
 
-Prettier is configured with Szum-Tech's shared config:
+### Prettier
+
+Prettier is configured with [@szum-tech/prettier-config](https://www.npmjs.com/package/@szum-tech/prettier-config):
 
 ```bash
 # Check formatting
@@ -582,7 +834,9 @@ npm run prettier:check
 npm run prettier:write
 ```
 
-### Pre-Commit Workflow (Recommended)
+### Pre-Commit Workflow
+
+Before committing, run:
 
 ```bash
 npm run lint && npm run prettier:write
@@ -592,28 +846,31 @@ npm run lint && npm run prettier:write
 
 ## 🚀 Building for Production
 
-### Recommended: EAS Build
+### Using Expo Application Services (EAS)
 
-[Expo Application Services (EAS)](https://docs.expo.dev/eas/) provides cloud-based builds for iOS and Android.
+[EAS Build](https://docs.expo.dev/eas/) provides cloud-based builds for iOS and Android.
 
-#### 1. Install EAS CLI
+#### 1️⃣ Install EAS CLI
 
 ```bash
 npm install -g eas-cli
 ```
 
-#### 2. Login and Initialize
+#### 2️⃣ Login to Expo
 
 ```bash
 eas login
+```
+
+#### 3️⃣ Configure Your Project
+
+```bash
 eas init
 ```
 
-#### 3. Configure Build Profile
+This creates `eas.json`. Customize build profiles as needed.
 
-EAS will create `eas.json`. Customize build profiles as needed.
-
-#### 4. Build for Production
+#### 4️⃣ Build for Platforms
 
 ```bash
 # iOS build
@@ -626,7 +883,7 @@ eas build --platform android --profile production
 eas build --platform all --profile production
 ```
 
-#### 5. Submit to App Stores
+#### 5️⃣ Submit to Stores
 
 ```bash
 # Submit to App Store
@@ -636,9 +893,9 @@ eas submit --platform ios
 eas submit --platform android
 ```
 
-### Alternative: Local Builds (Advanced)
+### Local/Bare Workflow Builds
 
-For local/bare workflow builds:
+For local builds or bare workflow:
 
 ```bash
 # Generate native projects
@@ -653,9 +910,10 @@ cd android && ./gradlew assembleRelease
 
 ### Web Deployment
 
-For web deployment:
+For web platform:
 
 ```bash
+# Export web build
 npx expo export:web
 ```
 
@@ -666,75 +924,50 @@ Deploy the `web-build` folder to:
 
 ---
 
-## 📦 Updating Dependencies
-
-### Expo SDK Updates
-
-Keep Expo SDK and related packages in sync:
-
-```bash
-# Check for updates
-npx expo install --check
-
-# Fix mismatched versions
-npx expo install --fix
-
-# Upgrade to latest Expo SDK
-npx expo upgrade
-```
-
-### Other Dependencies
-
-```bash
-# Check outdated packages
-npm outdated
-
-# Update specific package
-npm install package-name@latest
-
-# Update all packages (careful!)
-npm update
-```
-
----
-
 ## 🔧 Troubleshooting
 
 ### Common Issues and Solutions
 
-#### Reanimated Plugin Not Working
+<details>
+<summary><b>❌ Animations don't work or Reanimated errors</b></summary>
 
-**Problem**: Animations don't work or you see Reanimated errors.
+**Solution:** Ensure the Reanimated plugin is the **last plugin** in `babel.config.js`:
 
-**Solution**: Ensure the Reanimated plugin is the **last plugin** in `babel.config.js`, then clear cache:
+```javascript
+module.exports = {
+  presets: ['babel-preset-expo'],
+  plugins: [
+    // other plugins...
+    'react-native-reanimated/plugin', // Must be last!
+  ],
+};
+```
 
+Then clear cache:
 ```bash
 npx expo start -c
 ```
 
-#### iOS Build Errors After Native Changes
+</details>
 
-**Problem**: Build fails after adding native dependencies or running `expo prebuild`.
+<details>
+<summary><b>❌ iOS build fails after adding native dependencies</b></summary>
 
-**Solution**: Reinstall iOS pods:
+**Solution:** Reinstall iOS pods:
 
 ```bash
 cd ios
 pod install
 cd ..
-```
-
-Then rebuild:
-
-```bash
 npm run ios
 ```
 
-#### Metro Bundler Cache Issues
+</details>
 
-**Problem**: App shows old code or strange errors.
+<details>
+<summary><b>❌ App shows old code or strange errors</b></summary>
 
-**Solution**: Clear all caches:
+**Solution:** Clear all caches:
 
 ```bash
 # Clear Expo cache
@@ -747,11 +980,12 @@ npm cache clean --force
 watchman watch-del-all
 ```
 
-#### Android Build Fails
+</details>
 
-**Problem**: Android build or run fails with Gradle errors.
+<details>
+<summary><b>❌ Android Gradle build errors</b></summary>
 
-**Solution**: Clean and rebuild:
+**Solution:** Clean and rebuild:
 
 ```bash
 cd android
@@ -760,16 +994,20 @@ cd ..
 npm run android
 ```
 
-#### Environment Variables Not Working
+</details>
 
-**Problem**: Environment variables are undefined.
+<details>
+<summary><b>❌ Environment variables are undefined</b></summary>
 
-**Solution**:
-1. Ensure variables are prefixed with `EXPO_PUBLIC_`
-2. Restart the dev server after changing `.env` files
-3. Check validation in `src/data/env.ts`
+**Solution:**
+- Ensure variables are prefixed with `EXPO_PUBLIC_`
+- Restart the dev server after changing `.env` files
+- Check validation in `src/data/env.ts`
+- Verify `.env.local` file exists
 
-#### Check Environment Setup
+</details>
+
+### Expo Diagnostics
 
 Run Expo's built-in diagnostics:
 
@@ -778,76 +1016,99 @@ npx expo doctor
 ```
 
 This checks for:
-- Node.js version
+- Node.js version compatibility
 - Package version mismatches
 - Configuration issues
+- Common problems
 
-### Still Having Issues?
+### Getting Help
 
-1. Check [Expo Documentation](https://docs.expo.dev/)
-2. Search [Expo Forums](https://forums.expo.dev/)
-3. Open an issue on [GitHub](https://github.com/JanSzewczyk/react-native-sandbox/issues)
+- 📖 Check [Expo Documentation](https://docs.expo.dev/)
+- 💬 Search [Expo Forums](https://forums.expo.dev/)
+- 🐛 Open an issue on [GitHub](https://github.com/JanSzewczyk/react-native-sandbox/issues)
+- 📚 React Native [Documentation](https://reactnative.dev/docs/getting-started)
 
 ---
 
-## 🛠️ Tech Stack
+## 🖼️ Screenshots
 
-### Core Framework
-- **[React](https://react.dev/)** ![](https://img.shields.io/github/package-json/dependency-version/JanSzewczyk/react-native-sandbox/react?style=flat-square&label=) - UI library
-- **[React Native](https://reactnative.dev/)** ![](https://img.shields.io/github/package-json/dependency-version/JanSzewczyk/react-native-sandbox/react-native?style=flat-square&label=) - Mobile framework
-- **[Expo](https://expo.dev/)** ![](https://img.shields.io/github/package-json/dependency-version/JanSzewczyk/react-native-sandbox/expo?style=flat-square&label=) - Development platform
-- **[TypeScript](https://www.typescriptlang.org/)** ![](https://img.shields.io/github/package-json/dependency-version/JanSzewczyk/react-native-sandbox/dev/typescript?style=flat-square&label=) - Type safety
+### 📱 Demo Screens
 
-### Navigation & Routing
-- **[Expo Router](https://docs.expo.dev/router/introduction/)** ![](https://img.shields.io/github/package-json/dependency-version/JanSzewczyk/react-native-sandbox/expo-router?style=flat-square&label=) - File-based routing
-- **[React Navigation](https://reactnavigation.org/)** ![](https://img.shields.io/github/package-json/dependency-version/JanSzewczyk/react-native-sandbox/@react-navigation/native?style=flat-square&label=) - Navigation primitives
+> [TODO: Add screenshots of animation demos]
 
-### Styling
-- **[NativeWind](https://www.nativewind.dev/)** ![](https://img.shields.io/github/package-json/dependency-version/JanSzewczyk/react-native-sandbox/nativewind?style=flat-square&label=) - Tailwind for React Native
-- **[Tailwind CSS](https://tailwindcss.com/)** ![](https://img.shields.io/github/package-json/dependency-version/JanSzewczyk/react-native-sandbox/tailwindcss?style=flat-square&label=) - Utility-first CSS
-
-### Animation
-- **[React Native Reanimated](https://docs.swmansion.com/react-native-reanimated/)** ![](https://img.shields.io/github/package-json/dependency-version/JanSzewczyk/react-native-sandbox/react-native-reanimated?style=flat-square&label=) - Smooth animations
-- **[React Native Gesture Handler](https://docs.swmansion.com/react-native-gesture-handler/)** ![](https://img.shields.io/github/package-json/dependency-version/JanSzewczyk/react-native-sandbox/react-native-gesture-handler?style=flat-square&label=) - Native gestures
-
-### Validation & Types
-- **[Zod](https://zod.dev/)** ![](https://img.shields.io/github/package-json/dependency-version/JanSzewczyk/react-native-sandbox/zod?style=flat-square&label=) - Schema validation
-- **[T3 Env](https://env.t3.gg/)** ![](https://img.shields.io/github/package-json/dependency-version/JanSzewczyk/react-native-sandbox/@t3-oss/env-core?style=flat-square&label=) - Type-safe environment variables
-
-### Development Tools
-- **[ESLint](https://eslint.org/)** ![](https://img.shields.io/github/package-json/dependency-version/JanSzewczyk/react-native-sandbox/dev/eslint?style=flat-square&label=) - Code linting
-- **[Prettier](https://prettier.io/)** ![](https://img.shields.io/github/package-json/dependency-version/JanSzewczyk/react-native-sandbox/dev/prettier?style=flat-square&label=) - Code formatting
-- **[@szum-tech/prettier-config](https://www.npmjs.com/package/@szum-tech/prettier-config)** ![](https://img.shields.io/github/package-json/dependency-version/JanSzewczyk/react-native-sandbox/dev/@szum-tech/prettier-config?style=flat-square&label=) - Shared Prettier config
-
-### Expo Modules
-- **expo-blur** - Native blur effects
-- **expo-font** - Custom font loading
-- **expo-haptics** - Haptic feedback
-- **expo-image** - Optimized images
-- **expo-linking** - Deep linking
-- **expo-status-bar** - Status bar control
-- **expo-system-ui** - System UI customization
-- **expo-web-browser** - In-app browser
+**Available Demos:**
+- Twitter-style scrolling header
+- LinkedIn custom tabs
+- Bottom sheet interactions
+- Animated navigation patterns
+- Top navigation with hourly data
 
 ---
 
 ## 🤝 Contributing
 
-Contributions are welcome! If you'd like to contribute to this project:
+Contributions are welcome! 🎉 Help make this sandbox even better!
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/new-animation-demo`)
-3. Commit your changes using [Conventional Commits](https://www.conventionalcommits.org/)
-4. Push to the branch (`git push origin feature/new-animation-demo`)
-5. Open a Pull Request
+### How to Contribute
 
-Please make sure your code passes all tests and follows the project's coding standards.
+1️⃣ **Fork the repository**
+
+2️⃣ **Create a feature branch**
+```bash
+git checkout -b feature/new-animation-demo
+```
+
+3️⃣ **Make your changes**
+- Add new animation demos
+- Improve existing patterns
+- Fix bugs
+- Update documentation
+
+4️⃣ **Commit using Conventional Commits**
+
+```bash
+# Format: <type>(<scope>): <subject>
+
+git commit -m "feat: add bottom sheet animation demo"
+git commit -m "fix: resolve gesture handler conflict"
+git commit -m "docs: update animation examples"
+```
+
+**Commit Types:**
+- `feat:` — New feature or demo
+- `fix:` — Bug fix
+- `docs:` — Documentation changes
+- `style:` — Code style changes (formatting)
+- `refactor:` — Code refactoring
+- `perf:` — Performance improvements
+- `test:` — Adding or updating tests
+- `chore:` — Maintenance tasks
+
+5️⃣ **Push to your branch**
+```bash
+git push origin feature/new-animation-demo
+```
+
+6️⃣ **Open a Pull Request**
+- Provide clear description
+- Add demo video/GIF if UI changes
+- Reference any related issues
+- Ensure all checks pass
+
+### Contribution Guidelines
+
+- ✅ Follow TypeScript best practices
+- ✅ Use Expo and React Native conventions
+- ✅ Add comments for complex animations
+- ✅ Test on iOS and Android
+- ✅ Follow the existing code style
+- ✅ Update documentation
 
 ---
 
 ## 📜 License
 
-This project is licensed under the **MIT License**. For more information, see the [LICENSE](LICENSE) file.
+This project is licensed under the **MIT License**. You are free to use, modify, and distribute this software with proper attribution.
 
 ---
 
@@ -855,28 +1116,52 @@ This project is licensed under the **MIT License**. For more information, see th
 
 Built with amazing tools from the React Native ecosystem:
 
-- [Expo Team](https://expo.dev/) for the incredible development platform
-- [Software Mansion](https://swmansion.com/) for Reanimated and Gesture Handler
-- [NativeWind Team](https://www.nativewind.dev/) for Tailwind CSS in React Native
-- [Vercel](https://vercel.com/) for React and Next.js inspiration
-- The entire React Native community
+### 🛠️ Core Technologies
+
+- **[Expo Team](https://expo.dev/)** — For the incredible development platform
+- **[Software Mansion](https://swmansion.com/)** — For Reanimated and Gesture Handler
+- **[NativeWind Team](https://www.nativewind.dev/)** — For Tailwind CSS in React Native
+- **[Vercel](https://vercel.com/)** — For React and design inspiration
+
+### 🎨 Design & UI
+
+- **[React Native Community](https://reactnative.dev/)** — For the amazing framework
+- **[Tailwind CSS](https://tailwindcss.com/)** — For the utility-first approach
+
+### 🤖 Development Tools
+
+- **[TypeScript](https://www.typescriptlang.org/)** — For type safety
+- **[Zod](https://zod.dev/)** — For runtime validation
+- **[T3 Env](https://env.t3.gg/)** — For environment management
+
+### 🌟 Community
+
+- The entire React Native community for inspiration
+- All open-source contributors
+- Developers sharing animation patterns
 
 ---
 
-## 📧 Support & Contact
+## 📧 Contact
 
-- **Author**: [Jan Szewczyk](https://github.com/JanSzewczyk)
-- **Organization**: [Szum-Tech](https://github.com/szum-tech)
-- **Repository**: [github.com/JanSzewczyk/react-native-sandbox](https://github.com/JanSzewczyk/react-native-sandbox)
-- **Issues**: [Report a bug or request a feature](https://github.com/JanSzewczyk/react-native-sandbox/issues)
+This project is created and maintained by **Jan Szewczyk**, a passionate React Native developer exploring modern mobile development patterns.
+
+- **GitHub**: [@JanSzewczyk](https://github.com/JanSzewczyk)
+- **Project Repository**: [github.com/JanSzewczyk/react-native-sandbox](https://github.com/JanSzewczyk/react-native-sandbox)
+
+### Support
+
+Found a bug or have a feature request? Please open an issue on GitHub:
+
+[🐛 Report an Issue](https://github.com/JanSzewczyk/react-native-sandbox/issues)
 
 ---
 
 <div align="center">
 
-**Made with ❤️ by [Szum-Tech](https://github.com/szum-tech)**
+**Made with ❤️ by [Jan Szewczyk](https://github.com/JanSzewczyk)**
 
-If this sandbox inspired you, please consider giving it a ⭐ on GitHub!
+If this sandbox helped you, please consider giving it a ⭐ on GitHub!
 
 [⬆ Back to Top](#-react-native-sandbox)
 
