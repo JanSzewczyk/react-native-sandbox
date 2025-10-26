@@ -21,7 +21,7 @@ jobs:
         uses: actions/checkout@v5
 
       - name: Setup Node.js
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@v6
         with:
           node-version: "22"
           cache: "npm"
@@ -193,7 +193,7 @@ jobs:
           cat $REPORT_FILE
 
       - name: Upload report as artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: expo-update-report-${{ github.run_number }}
           path: expo-update-report.md
